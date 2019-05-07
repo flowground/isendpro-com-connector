@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "keyid": {
+                    "type": "string"
+                },
+                "subAccountEdit": {
+                    "enum": [
+                        "addAccount"
+                    ],
+                    "type": "string"
+                },
+                "subAccountLogin": {
+                    "type": "string"
+                },
+                "subAccountPassword": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keyid",
+                "subAccountEdit",
+                "subAccountLogin",
+                "subAccountPassword"
+            ],
+            "type": "object"
+        }
+    }
+}

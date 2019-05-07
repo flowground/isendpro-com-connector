@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "keyid": {
+                    "description": "Clé API",
+                    "type": "string"
+                },
+                "subAccountAddCredit": {
+                    "description": "montant du crédit à ajouter",
+                    "type": "string"
+                },
+                "subAccountCountryCode": {
+                    "type": "string"
+                },
+                "subAccountEdit": {
+                    "description": "action à réaliser soit setPrice pour définir un prix ou addCredit pour ajouter du credit ou setRestriction modifier la restriction stop /",
+                    "enum": [
+                        "setPrice",
+                        "addCredit",
+                        "setRestriction"
+                    ],
+                    "type": "string"
+                },
+                "subAccountKeyId": {
+                    "description": "keyid du sous-compte",
+                    "type": "string"
+                },
+                "subAccountPrice": {
+                    "type": "string"
+                },
+                "subAccountRestrictionStop": {
+                    "enum": [
+                        "0",
+                        "1"
+                    ],
+                    "type": "string"
+                },
+                "subAccountRestrictionTime": {
+                    "enum": [
+                        "0",
+                        "1"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keyid",
+                "subAccountEdit"
+            ],
+            "type": "object"
+        }
+    }
+}

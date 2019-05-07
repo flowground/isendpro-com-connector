@@ -1,0 +1,265 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "example": {
+                "keyid": "VOTRE_KEYID",
+                "num": [
+                    "06123456789",
+                    "07123456789"
+                ],
+                "repertoireEdit": "add",
+                "repertoireId": "VOTRE_REPERTOIRE_ID"
+            },
+            "properties": {
+                "champ1": {
+                    "description": "Noms des contact",
+                    "items": {
+                        "description": "Nom des contacts",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ10": {
+                    "description": "Champs I des contacts",
+                    "items": {
+                        "description": "Champ I",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ11": {
+                    "description": "Champs J des contacts",
+                    "items": {
+                        "description": "Champ J",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ12": {
+                    "description": "Champs K des contacts",
+                    "items": {
+                        "description": "Champ K",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ13": {
+                    "description": "Champs L des contacts",
+                    "items": {
+                        "description": "Champ L",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ14": {
+                    "description": "Champs M des contacts",
+                    "items": {
+                        "description": "Champ M",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ15": {
+                    "description": "Champs N des contacts",
+                    "items": {
+                        "description": "Champ N",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ16": {
+                    "description": "Champs O des contacts",
+                    "items": {
+                        "description": "Champ O",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ17": {
+                    "description": "Champs P des contacts",
+                    "items": {
+                        "description": "Champ P",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ18": {
+                    "description": "Champs Q des contacts",
+                    "items": {
+                        "description": "Champ Q",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ19": {
+                    "description": "Champs R des contacts",
+                    "items": {
+                        "description": "Champ R",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ2": {
+                    "description": "Champs A des contacts",
+                    "items": {
+                        "description": "Champ A",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ20": {
+                    "description": "Champs S des contacts",
+                    "items": {
+                        "description": "Champ S",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ21": {
+                    "description": "Champs T des contacts",
+                    "items": {
+                        "description": "Champ T",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ22": {
+                    "description": "Champs U des contacts",
+                    "items": {
+                        "description": "Champ U",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ23": {
+                    "description": "Champs V des contacts",
+                    "items": {
+                        "description": "Champ V",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ24": {
+                    "description": "Champs W des contacts",
+                    "items": {
+                        "description": "Champ W",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ25": {
+                    "description": "Champs X des contacts",
+                    "items": {
+                        "description": "Champ X",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ26": {
+                    "description": "Champs Y des contacts",
+                    "items": {
+                        "description": "Champ Y",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ27": {
+                    "description": "Champs Z des contacts",
+                    "items": {
+                        "description": "Champ Z",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ3": {
+                    "description": "Champs B des contacts",
+                    "items": {
+                        "description": "Champ B",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ4": {
+                    "description": "Champs C des contacts",
+                    "items": {
+                        "description": "Champ C",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ5": {
+                    "description": "Champs D des contacts",
+                    "items": {
+                        "description": "Champ D",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ6": {
+                    "description": "Champs E des contacts",
+                    "items": {
+                        "description": "Champ E",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ7": {
+                    "description": "Champs F des contacts",
+                    "items": {
+                        "description": "Champ F",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ8": {
+                    "description": "Champs G des contacts",
+                    "items": {
+                        "description": "Champ G",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "champ9": {
+                    "description": "Champs H des contacts",
+                    "items": {
+                        "description": "Champ H",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "keyid": {
+                    "description": "Clé API",
+                    "type": "string"
+                },
+                "num": {
+                    "description": "liste des numéros des téléphone à ajouter ou supprimer",
+                    "items": {
+                        "description": "Numéro de téléphone au format national ou international",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "repertoireEdit": {
+                    "description": "action à réaliser, \"add\" pour l'ajout de numéros, \"del\" pour la suppression de numéros",
+                    "enum": [
+                        "add",
+                        "del"
+                    ],
+                    "type": "string"
+                },
+                "repertoireId": {
+                    "description": "repertoireId du répertoire cible",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keyid",
+                "num",
+                "repertoireEdit",
+                "repertoireId"
+            ],
+            "type": "object"
+        }
+    }
+}

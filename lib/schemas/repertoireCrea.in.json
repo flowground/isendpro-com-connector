@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "example": {
+                "keyid": "VOTRE_KEYID",
+                "repertoireEdit": "create",
+                "repertoireNom": "Repertoire de test"
+            },
+            "properties": {
+                "keyid": {
+                    "description": "Clé API",
+                    "type": "string"
+                },
+                "repertoireEdit": {
+                    "default": "create",
+                    "description": "Action à réaliser doit valoir \"create\" ici.",
+                    "enum": [
+                        "create"
+                    ],
+                    "type": "string"
+                },
+                "repertoireNom": {
+                    "description": "Nom du répertoire (libellé) à créer",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keyid",
+                "repertoireEdit",
+                "repertoireNom"
+            ],
+            "type": "object"
+        }
+    }
+}

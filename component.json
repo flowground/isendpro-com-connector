@@ -1,0 +1,273 @@
+{
+    "title": "API iSendPro",
+    "description": "[1] Liste des fonctionnalites :\n- envoi de SMS a un ou plusieurs destinataires,\n- lookup HLR,\n- recuperation des recapitulatifs de campagne,\n- gestion des repertoires,\n- ajout en liste noire.\n- comptage du nombre de caracteres des SMS\n\n[2] Pour utiliser cette API vous devez:\n- Creer un compte iSendPro sur https://isendpro.com/\n- Crediter votre compte \n    - Remarque: obtention d'un credit de test possible sous conditions\n- Noter votre cle de compte (keyid)\n  - Elle vous sera indispensable a l'utilisation de l'API\n  - Vous pouvez la trouver dans le rubrique mon \"compte\", sous-rubrique \"mon API\"\n- Configurer le controle IP\n  - Le controle IP est configurable dans le rubrique mon \"compte\", sous-rubrique \"mon API\"\n  - Il s'agit d'un systeme de liste blanche, vous devez entrer les IP utilisees pour appeler l'API\n  - Vous pouvez egalement desactiver totalement le controle IP\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/isendpro.com/1.1.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://apirest.isendpro.com/cgi-bin",
+                    "http://apirest.isendpro.com/cgi-bin",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getCampagne": {
+            "main": "./lib/actions/getCampagne.js",
+            "title": "Retourne les SMS envoyes sur une periode donnee",
+            "description": "Retourne les SMS envoyes sur une periode donnee en fonction d'une date de debut et d'une date de fin. \n\nLes dates sont au format YYYY-MM-DD hh:mm. \n\nLe fichier rapport de campagne est sous la forme d'un fichier zip + contenant un fichier csv contenant le detail des envois.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCampagne.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "comptage": {
+            "main": "./lib/actions/comptage.js",
+            "title": "Compter le nombre de caractere ",
+            "description": "Compte le nombre de SMS necessaire a un envoi",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/comptage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCredit": {
+            "main": "./lib/actions/getCredit.js",
+            "title": "Interrogation credit",
+            "description": "Retourne le credit existant associe au compte.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCredit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delListeNoire": {
+            "main": "./lib/actions/delListeNoire.js",
+            "title": "Ajoute un numero en liste noire",
+            "description": "Supprime un numero en liste noire",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delListeNoire.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getListeNoire": {
+            "main": "./lib/actions/getListeNoire.js",
+            "title": "Retourne le liste noire",
+            "description": "Retourne un fichier csv zippe contenant la liste noire",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getListeNoire.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getHlr": {
+            "main": "./lib/actions/getHlr.js",
+            "title": "Verifier la validite d'un numero",
+            "description": "Realise un lookup HLR sur les numeros \n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getHlr.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "repertoireCrea": {
+            "main": "./lib/actions/repertoireCrea.js",
+            "title": "Gestion repertoire (creation)",
+            "description": "Cree un nouveau repertoire et retourne son identifiant. Cet identifiant pourra etre utilise pour ajouter ou supprimer des numeros via l'API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/repertoireCrea.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "repertoire": {
+            "main": "./lib/actions/repertoire.js",
+            "title": "Gestion repertoire (modification)",
+            "description": "Ajoute ou supprime une liste de numeros a un repertoire existant.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/repertoire.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "setListeNoire": {
+            "main": "./lib/actions/setListeNoire.js",
+            "title": "Ajoute un numero en liste noire",
+            "description": "Ajoute un numero en liste noire. Une fois ajoute, les requetes d'envoi de SMS marketing vers ce numero seront refusees.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/setListeNoire.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addShortlink": {
+            "main": "./lib/actions/addShortlink.js",
+            "title": "add a shortlink",
+            "description": "add a shortlink",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addShortlink.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendSms": {
+            "main": "./lib/actions/sendSms.js",
+            "title": "Envoyer un sms",
+            "description": "Envoi un sms vers un unique destinataire",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendSms.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendSmsMulti": {
+            "main": "./lib/actions/sendSmsMulti.js",
+            "title": "Envoyer des SMS",
+            "description": "Envoi de SMS vers 1 ou plusieurs destinataires\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendSmsMulti.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "subaccountAdd": {
+            "main": "./lib/actions/subaccountAdd.js",
+            "title": "Ajoute un sous compte",
+            "description": "Ajoute un sous compte",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/subaccountAdd.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "subaccountEdit": {
+            "main": "./lib/actions/subaccountEdit.js",
+            "title": "Edit a subaccount",
+            "description": "Edit a subaccount",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/subaccountEdit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

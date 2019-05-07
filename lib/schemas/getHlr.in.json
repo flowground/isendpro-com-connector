@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "example": {
+                "getHLR": "1",
+                "keyid": "VOTRE_KEYID",
+                "num": [
+                    "06123456789",
+                    "06345687899"
+                ]
+            },
+            "properties": {
+                "getHLR": {
+                    "default": "1",
+                    "description": "Doit valoir \"1\"",
+                    "enum": [
+                        "1"
+                    ],
+                    "type": "string"
+                },
+                "keyid": {
+                    "description": "Clé API",
+                    "type": "string"
+                },
+                "num": {
+                    "description": "liste de numéros de téléphone",
+                    "items": {
+                        "description": "numéro au format national français ou international",
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "getHLR",
+                "keyid",
+                "num"
+            ],
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "keyid": {
+            "required": true,
+            "type": "string",
+            "format": "string"
+        },
+        "credit": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "1",
+                "2"
+            ]
+        }
+    }
+}

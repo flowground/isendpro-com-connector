@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "keyid": {
+            "required": true,
+            "type": "string",
+            "format": "string"
+        },
+        "setlisteNoire": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "1"
+            ]
+        },
+        "num": {
+            "required": true,
+            "type": "string",
+            "format": "string"
+        }
+    }
+}

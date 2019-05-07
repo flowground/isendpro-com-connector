@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "keyid": {
+            "required": true,
+            "type": "string"
+        },
+        "rapportCampagne": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "1"
+            ]
+        },
+        "date_deb": {
+            "required": true,
+            "type": "string"
+        },
+        "date_fin": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "keyid": {
+                    "type": "string"
+                },
+                "shortlink": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "keyid",
+                "shortlink"
+            ],
+            "type": "object"
+        }
+    }
+}
